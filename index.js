@@ -1,125 +1,15 @@
-const discord = require('discord.js');
+'use strict';
 
-module.exports = {
-	Client: require('./client'),
-	CommandoClient: require('./client'),
-	Command: require('./commands/base'),
-	CommandGroup: require('./commands/group'),
-	CommandMessage: require('./commands/message'),
-	ArgumentCollector: require('./commands/collector'),
-	Argument: require('./commands/argument'),
-	ArgumentType: require('./types/base'),
-	FriendlyError: require('./errors/friendly'),
-	CommandFormatError: require('./errors/command-format'),
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.readFromFixture = undefined;
 
-	util: require('./util'),
-	version: require('../package').version,
+var _readFromFixture2 = require('./readFromFixture');
 
-	SettingProvider: require('./providers/base'),
-	get SQLiteProvider() {
-		return require('./providers/sqlite');
-	}
-};
+var _readFromFixture3 = _interopRequireDefault(_readFromFixture2);
 
-require('./extensions/guild').applyToClass(discord.Guild);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * @external Channel
- * @see {@link https://discord.js.org/#/docs/main/master/class/Channel}
- */
-/**
- * @external Client
- * @see {@link https://discord.js.org/#/docs/main/master/class/Client}
- */
-/**
- * @external ClientOptions
- * @see {@link https://discord.js.org/#/docs/main/master/typedef/ClientOptions}
- */
-/**
- * @external Collection
- * @see {@link https://discord.js.org/#/docs/main/master/class/Collection}
- */
-/**
- * @external DMChannel
- * @see {@link https://discord.js.org/#/docs/main/master/class/DMChannel}
- */
-/**
- * @external GroupDMChannel
- * @see {@link https://discord.js.org/#/docs/main/master/class/GroupDMChannel}
- */
-/**
- * @external Guild
- * @see {@link https://discord.js.org/#/docs/main/master/class/Guild}
- */
-/**
- * @external GuildMember
- * @see {@link https://discord.js.org/#/docs/main/master/class/GuildMember}
- */
-/**
- * @external GuildResolvable
- * @see {@link https://discord.js.org/#/docs/main/master/typedef/GuildResolvable}
- */
-/**
- * @external Message
- * @see {@link https://discord.js.org/#/docs/main/master/class/Message}
- */
-/**
- * @external MessageAttachment
- * @see {@link https://discord.js.org/#/docs/main/master/class/MessageAttachment}
- */
-/**
- * @external MessageEmbed
- * @see {@link https://discord.js.org/#/docs/main/master/class/MessageEmbed}
- */
-/**
- * @external MessageReaction
- * @see {@link https://discord.js.org/#/docs/main/master/class/MessageReaction}
- */
-/**
- * @external MessageOptions
- * @see {@link https://discord.js.org/#/docs/main/master/typedef/MessageOptions}
- */
-/**
- * @external Role
- * @see {@link https://discord.js.org/#/docs/main/master/class/Role}
- */
-/**
- * @external StringResolvable
- * @see {@link https://discord.js.org/#/docs/main/master/typedef/StringResolvable}
- */
-/**
- * @external TextChannel
- * @see {@link https://discord.js.org/#/docs/main/master/class/TextChannel}
- */
-/**
- * @external User
- * @see {@link https://discord.js.org/#/docs/main/master/class/User}
- */
-/**
- * @external UserResolvable
- * @see {@link https://discord.js.org/#/docs/main/master/class/UserResolvable}
- */
-/**
- * @external Emoji
- * @see {@link https://discord.js.org/#/docs/main/master/class/Emoji}
- */
-/**
- * @external ReactionEmoji
- * @see {@link https://discord.js.org/#/docs/main/master/class/ReactionEmoji}
- */
-/**
- * @external Webhook
- * @see {@link https://discord.js.org/#/docs/main/master/class/Webhook}
- */
-/**
- * @external RichEmbed
- * @see {@link https://discord.js.org/#/docs/main/master/class/RichEmbed}
- */
-/**
- * @external ShardingManager
- * @see {@link https://discord.js.org/#/docs/main/master/class/ShardingManager}
- */
-/**
- * @external RequireAllOptions
- * @see {@link https://www.npmjs.com/package/require-all}
- */
+exports.readFromFixture = _readFromFixture3.default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy91dGlscy9pbmRleC5qcyJdLCJuYW1lcyI6WyJyZWFkRnJvbUZpeHR1cmUiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7UUFBT0EsZSIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCByZWFkRnJvbUZpeHR1cmUgZnJvbSAnLi9yZWFkRnJvbUZpeHR1cmUnO1xuIl19
