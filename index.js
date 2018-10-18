@@ -1,41 +1,125 @@
-const commando = require('discord.js-commando');
+const discord = require('discord.js');
 
-const bot = new commando.Client();
+module.exports = {
+	Client: require('./client'),
+	CommandoClient: require('./client'),
+	Command: require('./commands/base'),
+	CommandGroup: require('./commands/group'),
+	CommandMessage: require('./commands/message'),
+	ArgumentCollector: require('./commands/collector'),
+	Argument: require('./commands/argument'),
+	ArgumentType: require('./types/base'),
+	FriendlyError: require('./errors/friendly'),
+	CommandFormatError: require('./errors/command-format'),
 
-bot.on("guildMemberAdd", member => {
-    let guild = member.guild;
-    guild.defaultChannel.sendMessage(`Welcome ${member.user} to the Wonky Server!The wonkiest place on Earth!`).catch(console.error);
+	util: require('./util'),
+	version: require('../package').version,
 
+	SettingProvider: require('./providers/base'),
+	get SQLiteProvider() {
+		return require('./providers/sqlite');
+	}
+};
 
-  });
+require('./extensions/guild').applyToClass(discord.Guild);
 
-
-bot.registry.registerGroup('random', 'Random');
-
-bot.registry.registerGroup('quotes', 'Quotes');
-
-bot.registry.registerGroup('basic', 'Basic');
-
-bot.registry.registerDefaults();
-
-bot.registry.registerCommandsIn(__dirname + "/commands");
-
-bot.on("ready", async () => {
-  console.log(`${bot.user.username} is online!`);
-
-  bot.user.setActivity("Loot hoovering around in Thedas!");
-
-
-
-});
-
-
-
-
-
-
-
-
-
-
-  bot.login('NTAyMTQ4NTgzNDYyNzk3MzIx.DqpFDA.ogSuUC0YSPgI7actELn8D4m4XEA');
+/**
+ * @external Channel
+ * @see {@link https://discord.js.org/#/docs/main/master/class/Channel}
+ */
+/**
+ * @external Client
+ * @see {@link https://discord.js.org/#/docs/main/master/class/Client}
+ */
+/**
+ * @external ClientOptions
+ * @see {@link https://discord.js.org/#/docs/main/master/typedef/ClientOptions}
+ */
+/**
+ * @external Collection
+ * @see {@link https://discord.js.org/#/docs/main/master/class/Collection}
+ */
+/**
+ * @external DMChannel
+ * @see {@link https://discord.js.org/#/docs/main/master/class/DMChannel}
+ */
+/**
+ * @external GroupDMChannel
+ * @see {@link https://discord.js.org/#/docs/main/master/class/GroupDMChannel}
+ */
+/**
+ * @external Guild
+ * @see {@link https://discord.js.org/#/docs/main/master/class/Guild}
+ */
+/**
+ * @external GuildMember
+ * @see {@link https://discord.js.org/#/docs/main/master/class/GuildMember}
+ */
+/**
+ * @external GuildResolvable
+ * @see {@link https://discord.js.org/#/docs/main/master/typedef/GuildResolvable}
+ */
+/**
+ * @external Message
+ * @see {@link https://discord.js.org/#/docs/main/master/class/Message}
+ */
+/**
+ * @external MessageAttachment
+ * @see {@link https://discord.js.org/#/docs/main/master/class/MessageAttachment}
+ */
+/**
+ * @external MessageEmbed
+ * @see {@link https://discord.js.org/#/docs/main/master/class/MessageEmbed}
+ */
+/**
+ * @external MessageReaction
+ * @see {@link https://discord.js.org/#/docs/main/master/class/MessageReaction}
+ */
+/**
+ * @external MessageOptions
+ * @see {@link https://discord.js.org/#/docs/main/master/typedef/MessageOptions}
+ */
+/**
+ * @external Role
+ * @see {@link https://discord.js.org/#/docs/main/master/class/Role}
+ */
+/**
+ * @external StringResolvable
+ * @see {@link https://discord.js.org/#/docs/main/master/typedef/StringResolvable}
+ */
+/**
+ * @external TextChannel
+ * @see {@link https://discord.js.org/#/docs/main/master/class/TextChannel}
+ */
+/**
+ * @external User
+ * @see {@link https://discord.js.org/#/docs/main/master/class/User}
+ */
+/**
+ * @external UserResolvable
+ * @see {@link https://discord.js.org/#/docs/main/master/class/UserResolvable}
+ */
+/**
+ * @external Emoji
+ * @see {@link https://discord.js.org/#/docs/main/master/class/Emoji}
+ */
+/**
+ * @external ReactionEmoji
+ * @see {@link https://discord.js.org/#/docs/main/master/class/ReactionEmoji}
+ */
+/**
+ * @external Webhook
+ * @see {@link https://discord.js.org/#/docs/main/master/class/Webhook}
+ */
+/**
+ * @external RichEmbed
+ * @see {@link https://discord.js.org/#/docs/main/master/class/RichEmbed}
+ */
+/**
+ * @external ShardingManager
+ * @see {@link https://discord.js.org/#/docs/main/master/class/ShardingManager}
+ */
+/**
+ * @external RequireAllOptions
+ * @see {@link https://www.npmjs.com/package/require-all}
+ */
